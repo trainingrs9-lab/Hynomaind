@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -207,46 +208,168 @@
       }
     }
 
-    /* FAQ DESIGN */
+    /* PREMIUM FAQ ACCORDION */
 
     .faq-section {
-      background: linear-gradient(180deg, #f8f6f1, #ffffff);
+      background:
+        radial-gradient(ellipse at 10% 10%, rgba(212,170,96,.09), transparent 42%),
+        linear-gradient(180deg, #f8f6f1, #ffffff);
+      padding-top: 90px;
+      padding-bottom: 90px;
     }
 
-    .faq-grid details {
-      background: #fff;
-      border: 1px solid rgba(201,161,94,.25);
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(8,20,36,.05);
-      transition: .25s ease;
+    .faq-section .section-heading {
+      margin-bottom: 38px;
     }
 
-    .faq-grid details:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 32px rgba(8,20,36,.10);
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .faq-grid summary {
+    .faq-item {
+      background: rgba(255,255,255,.96);
+      border: 1px solid rgba(201,161,94,.28);
+      border-radius: 17px;
+      overflow: hidden;
+      box-shadow: 0 8px 26px rgba(8,20,36,.055);
+      transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(201,161,94,.65);
+      box-shadow: 0 13px 32px rgba(8,20,36,.09);
+      transform: translateY(-2px);
+    }
+
+    .faq-item[open] {
+      border-color: #c9a15e;
+      box-shadow: 0 15px 38px rgba(8,20,36,.10);
+    }
+
+    .faq-item summary {
       list-style: none;
+      cursor: pointer;
       position: relative;
-      padding-right: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 23px 25px;
+      color: #17263a;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      user-select: none;
     }
 
-    .faq-grid summary::-webkit-details-marker {
+    .faq-item summary::-webkit-details-marker {
       display: none;
     }
 
-    .faq-grid summary::after {
-      content: "+";
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 22px;
-      color: #bd9655;
+    .faq-question {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
-    .faq-grid details[open] summary::after {
+    .faq-number {
+      color: #bd9655;
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .faq-icon {
+      width: 31px;
+      height: 31px;
+      min-width: 31px;
+      border-radius: 50%;
+      border: 1px solid rgba(189,150,85,.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bd9655;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1;
+      transition: transform .3s ease, background .3s ease, color .3s ease;
+    }
+
+    .faq-item[open] .faq-icon {
+      background: #bd9655;
+      color: #fff;
+      transform: rotate(180deg);
+    }
+
+    .faq-icon::before {
+      content: "+";
+    }
+
+    .faq-item[open] .faq-icon::before {
       content: "−";
+    }
+
+    .faq-answer {
+      padding: 0 25px 23px 59px;
+      color: #657184;
+      font-size: 15px;
+      line-height: 1.85;
+      animation: faq-reveal .3s ease both;
+    }
+
+    .faq-answer p {
+      margin: 0;
+    }
+
+    @keyframes faq-reveal {
+      from {
+        opacity: 0;
+        transform: translateY(-7px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .faq-item summary:focus-visible {
+      outline: 3px solid rgba(201,161,94,.4);
+      outline-offset: -4px;
+      border-radius: 17px;
+    }
+
+    @media (max-width: 600px) {
+      .faq-section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+      }
+
+      .faq-item summary {
+        padding: 19px 17px;
+        font-size: 14px;
+        gap: 10px;
+      }
+
+      .faq-question {
+        gap: 9px;
+      }
+
+      .faq-answer {
+        padding: 0 18px 20px 43px;
+        font-size: 14px;
+      }
+
+      .faq-icon {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+      }
     }
   </style>
 </head>
@@ -741,7 +864,7 @@
 
 </main>
 
-<!-- FAQ SECTION -->
+<!-- PREMIUM FAQ ACCORDION -->
 
 <section class="section faq-section" id="faq">
 
@@ -752,34 +875,66 @@
     <p>Helpful information before you book a session or join a training.</p>
   </div>
 
-  <div class="faq-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px;max-width:1050px;margin:0 auto">
+  <div class="faq-grid">
 
-    <details class="course-card" style="padding:24px">
-      <summary style="cursor:pointer;font-weight:700">Are sessions available online?</summary>
-      <p style="margin-top:14px">
-        Yes. Online sessions are available. Offline appointments can also be discussed based on availability.
-      </p>
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">
+          <span class="faq-number">01</span>
+          Are sessions available online?
+        </span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </summary>
+      <div class="faq-answer">
+        <p>
+          Yes. Online sessions are available. Offline appointments can also be discussed based on availability.
+        </p>
+      </div>
     </details>
 
-    <details class="course-card" style="padding:24px">
-      <summary style="cursor:pointer;font-weight:700">Can beginners join training?</summary>
-      <p style="margin-top:14px">
-        Training enquiries are welcome from beginners. Share your learning goals and we can explain the suitable learning path.
-      </p>
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">
+          <span class="faq-number">02</span>
+          Can beginners join training?
+        </span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </summary>
+      <div class="faq-answer">
+        <p>
+          Training enquiries are welcome from beginners. Share your learning goals and we can explain the suitable learning path.
+        </p>
+      </div>
     </details>
 
-    <details class="course-card" style="padding:24px">
-      <summary style="cursor:pointer;font-weight:700">Is a certificate provided?</summary>
-      <p style="margin-top:14px">
-        A Certificate of Completion is offered after fulfilling the applicable training and completion requirements.
-      </p>
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">
+          <span class="faq-number">03</span>
+          Is a certificate provided?
+        </span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </summary>
+      <div class="faq-answer">
+        <p>
+          A Certificate of Completion is offered after fulfilling the applicable training and completion requirements.
+        </p>
+      </div>
     </details>
 
-    <details class="course-card" style="padding:24px">
-      <summary style="cursor:pointer;font-weight:700">How do I know which option is right?</summary>
-      <p style="margin-top:14px">
-        Send an enquiry with your goal. HypnoMind can share session or training details so you can make an informed choice.
-      </p>
+    <details class="faq-item">
+      <summary>
+        <span class="faq-question">
+          <span class="faq-number">04</span>
+          How do I know which option is right?
+        </span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </summary>
+      <div class="faq-answer">
+        <p>
+          Send an enquiry with your goal. HypnoMind can share session or training details so you can make an informed choice.
+        </p>
+      </div>
     </details>
 
   </div>
@@ -824,6 +979,26 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="config.js"></script>
 <script src="script.js"></script>
+
+<!-- FAQ: ONLY ONE QUESTION OPEN AT A TIME -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(function (item) {
+      item.addEventListener("toggle", function () {
+        if (item.open) {
+          faqItems.forEach(function (otherItem) {
+            if (otherItem !== item) {
+              otherItem.open = false;
+            }
+          });
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
