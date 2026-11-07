@@ -25,6 +25,33 @@
     @media (max-width: 600px) {
       .whatsapp-float { width: 55px; height: 55px; bottom: 18px; right: 18px; }
     }
+
+    /* HypnoMind Premium UI Upgrade */
+    :root { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+    .site-header { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .brand-mark { box-shadow: 0 8px 24px rgba(212,170,96,.22); }
+    .hero { position: relative; isolation: isolate; }
+    .hero::after { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:radial-gradient(ellipse at 15% 15%,rgba(212,170,96,.10),transparent 42%),radial-gradient(ellipse at 85% 80%,rgba(88,139,190,.12),transparent 40%); }
+    .hero-content, .hero-art { animation: hm-rise .8s ease both; }
+    .hero-art { animation-delay:.12s; }
+    .button, .nav a, .course-card, .feature-card { transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .feature-card:hover, .course-card:hover { transform: translateY(-5px); box-shadow:0 18px 42px rgba(8,20,36,.13); }
+    .section-heading h2, .split h2, .mentalism-copy h2, .about-copy h2, .contact-copy h2 { text-wrap: balance; }
+    .course-tag { letter-spacing:.13em; }
+    .trust-strip { border:1px solid rgba(212,170,96,.22); border-radius:18px; padding:22px; }
+    .contact-section { position:relative; isolation:isolate; }
+    .contact-section::before { content:""; position:absolute; z-index:-1; width:360px; height:360px; border-radius:50%; background:rgba(212,170,96,.08); filter:blur(65px); top:10%; left:-100px; }
+    .enquiry-form { box-shadow:0 24px 70px rgba(7,19,34,.14); }
+    .enquiry-form input:focus, .enquiry-form select:focus, .enquiry-form textarea:focus { outline:0; border-color:#c9a15e; box-shadow:0 0 0 4px rgba(201,161,94,.15); }
+    .form-status { min-height:1.5em; }
+    .footer { gap:18px; }
+    .footer a:not(.brand) { opacity:.85; }
+    .footer a:not(.brand):hover { opacity:1; color:#d4aa60; }
+    @keyframes hm-rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+    @media (max-width:700px) { .hero-content, .hero-art { animation:none; } .trust-strip { padding:16px; } }
   </style>
 </head>
 
@@ -44,6 +71,7 @@
     <a href="#sessions">Therapy Sessions</a>
     <a href="#training">Training</a>
     <a href="#mentalism">Mentalism</a>
+    <a href="#faq">FAQ</a>
     <a href="#about">About</a>
     <a class="nav-cta" href="#contact">Enquire Now</a>
   </nav>
@@ -474,6 +502,23 @@
 </section>
 
 </main>
+
+
+<!-- QUICK FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="section-kicker">A FEW QUICK ANSWERS</div>
+  <div class="section-heading">
+    <h2>Questions? <em>Start here.</em></h2>
+    <p>Helpful information before you book a session or join a training.</p>
+  </div>
+  <div class="faq-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px;max-width:1050px;margin:0 auto">
+    <details class="course-card" style="padding:24px"><summary style="cursor:pointer;font-weight:700">Are sessions available online?</summary><p style="margin-top:14px">Yes. Online sessions are available. Offline appointments can also be discussed based on availability.</p></details>
+    <details class="course-card" style="padding:24px"><summary style="cursor:pointer;font-weight:700">Can beginners join training?</summary><p style="margin-top:14px">Training enquiries are welcome from beginners. Share your learning goals and we can explain the suitable learning path.</p></details>
+    <details class="course-card" style="padding:24px"><summary style="cursor:pointer;font-weight:700">Is a certificate provided?</summary><p style="margin-top:14px">A Certificate of Completion is offered after fulfilling the applicable training and completion requirements.</p></details>
+    <details class="course-card" style="padding:24px"><summary style="cursor:pointer;font-weight:700">How do I know which option is right?</summary><p style="margin-top:14px">Send an enquiry with your goal. HypnoMind can share session or training details so you can make an informed choice.</p></details>
+  </div>
+  <div class="section-heading" style="margin-top:32px"><a class="button button-gold" href="#contact">Ask Your Question →</a></div>
+</section>
 
 <footer class="footer">
   <a class="brand footer-brand" href="#home">
