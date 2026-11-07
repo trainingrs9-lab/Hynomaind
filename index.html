@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,54 +11,253 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
   <style>
     .whatsapp-float {
-      position: fixed; width: 60px; height: 60px; bottom: 25px; right: 25px;
-      background: #25D366; color: #fff; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 5px 18px rgba(0,0,0,.25); z-index: 9999;
-      text-decoration: none; transition: transform .25s ease;
-    }
-    .whatsapp-float:hover { transform: scale(1.10); }
-    .whatsapp-float:focus-visible { outline: 3px solid #101b2b; outline-offset: 4px; }
-    @media (max-width: 600px) {
-      .whatsapp-float { width: 55px; height: 55px; bottom: 18px; right: 18px; }
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 18px rgba(0,0,0,.25);
+      z-index: 9999;
+      text-decoration: none;
+      transition: transform .25s ease;
     }
 
-    /* HypnoMind Premium UI Upgrade */
-    :root { scroll-behavior: smooth; }
-    body { overflow-x: hidden; }
-    .site-header { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-    .brand-mark { box-shadow: 0 8px 24px rgba(212,170,96,.22); }
-    .hero { position: relative; isolation: isolate; }
-    .hero::after { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:radial-gradient(ellipse at 15% 15%,rgba(212,170,96,.10),transparent 42%),radial-gradient(ellipse at 85% 80%,rgba(88,139,190,.12),transparent 40%); }
-    .hero-content, .hero-art { animation: hm-rise .8s ease both; }
-    .hero-art { animation-delay:.12s; }
-    .button, .nav a, .course-card, .feature-card { transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
-    .button:hover { transform: translateY(-2px); }
-    .feature-card:hover, .course-card:hover { transform: translateY(-5px); box-shadow:0 18px 42px rgba(8,20,36,.13); }
-    .section-heading h2, .split h2, .mentalism-copy h2, .about-copy h2, .contact-copy h2 { text-wrap: balance; }
-    .course-tag { letter-spacing:.13em; }
-    .trust-strip { border:1px solid rgba(212,170,96,.22); border-radius:18px; padding:22px; }
-    .contact-section { position:relative; isolation:isolate; }
-    .contact-section::before { content:""; position:absolute; z-index:-1; width:360px; height:360px; border-radius:50%; background:rgba(212,170,96,.08); filter:blur(65px); top:10%; left:-100px; }
-    .enquiry-form { box-shadow:0 24px 70px rgba(7,19,34,.14); }
-    .enquiry-form input:focus, .enquiry-form select:focus, .enquiry-form textarea:focus { outline:0; border-color:#c9a15e; box-shadow:0 0 0 4px rgba(201,161,94,.15); }
-    .form-status { min-height:1.5em; }
-    .footer { gap:18px; }
-    .footer a:not(.brand) { opacity:.85; }
-    .footer a:not(.brand):hover { opacity:1; color:#d4aa60; }
-    @keyframes hm-rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
-    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
-    @media (max-width:700px) { .hero-content, .hero-art { animation:none; } .trust-strip { padding:16px; } }
+    .whatsapp-float:hover {
+      transform: scale(1.10);
+    }
+
+    .whatsapp-float:focus-visible {
+      outline: 3px solid #101b2b;
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 18px;
+        right: 18px;
+      }
+    }
+
+    /* HYPNOMIND PREMIUM DESIGN */
+
+    :root {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .site-header {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .brand-mark {
+      box-shadow: 0 8px 24px rgba(212,170,96,.22);
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 15% 15%,rgba(212,170,96,.10),transparent 42%),
+        radial-gradient(ellipse at 85% 80%,rgba(88,139,190,.12),transparent 40%);
+    }
+
+    .hero-content,
+    .hero-art {
+      animation: hm-rise .8s ease both;
+    }
+
+    .hero-art {
+      animation-delay: .12s;
+    }
+
+    .button,
+    .nav a,
+    .course-card,
+    .feature-card {
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .feature-card:hover,
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 42px rgba(8,20,36,.13);
+    }
+
+    .section-heading h2,
+    .split h2,
+    .mentalism-copy h2,
+    .about-copy h2,
+    .contact-copy h2 {
+      text-wrap: balance;
+    }
+
+    .course-tag {
+      letter-spacing: .13em;
+    }
+
+    .trust-strip {
+      border: 1px solid rgba(212,170,96,.22);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .contact-section {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .contact-section::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(212,170,96,.08);
+      filter: blur(65px);
+      top: 10%;
+      left: -100px;
+    }
+
+    .enquiry-form {
+      box-shadow: 0 24px 70px rgba(7,19,34,.14);
+    }
+
+    .enquiry-form input:focus,
+    .enquiry-form select:focus,
+    .enquiry-form textarea:focus {
+      outline: 0;
+      border-color: #c9a15e;
+      box-shadow: 0 0 0 4px rgba(201,161,94,.15);
+    }
+
+    .form-status {
+      min-height: 1.5em;
+    }
+
+    .footer {
+      gap: 18px;
+    }
+
+    .footer a:not(.brand) {
+      opacity: .85;
+    }
+
+    .footer a:not(.brand):hover {
+      opacity: 1;
+      color: #d4aa60;
+    }
+
+    @keyframes hm-rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero-content,
+      .hero-art {
+        animation: none;
+      }
+
+      .trust-strip {
+        padding: 16px;
+      }
+    }
+
+    /* FAQ DESIGN */
+
+    .faq-section {
+      background: linear-gradient(180deg, #f8f6f1, #ffffff);
+    }
+
+    .faq-grid details {
+      background: #fff;
+      border: 1px solid rgba(201,161,94,.25);
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(8,20,36,.05);
+      transition: .25s ease;
+    }
+
+    .faq-grid details:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(8,20,36,.10);
+    }
+
+    .faq-grid summary {
+      list-style: none;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    .faq-grid summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-grid summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 22px;
+      color: #bd9655;
+    }
+
+    .faq-grid details[open] summary::after {
+      content: "−";
+    }
   </style>
 </head>
 
 <body>
+
 <header class="site-header">
   <a class="brand" href="#home">
     <span class="brand-mark">H</span>
-    <span>HYPNO<span class="brand-accent">MIND</span>
+    <span>
+      HYPNO<span class="brand-accent">MIND</span>
       <small>Heal • Learn • Transform</small>
     </span>
   </a>
@@ -80,13 +278,15 @@
 <main>
 
 <!-- HERO -->
+
 <section class="hero" id="home">
   <div class="hero-glow"></div>
 
   <div class="hero-content">
     <p class="eyebrow">WELCOME TO HYPNOMIND</p>
 
-    <h1>Discover the power of your mind.<br>
+    <h1>
+      Discover the power of your mind.<br>
       <em>Heal. Learn. Transform.</em>
     </h1>
 
@@ -110,22 +310,29 @@
   <div class="hero-art" aria-label="Abstract illustration of the human mind">
     <div class="orbit orbit-one"></div>
     <div class="orbit orbit-two"></div>
-    <div class="profile-shape"><div class="profile-light"></div></div>
+    <div class="profile-shape">
+      <div class="profile-light"></div>
+    </div>
     <div class="art-label label-top">FOCUS</div>
     <div class="art-label label-bottom">POTENTIAL</div>
   </div>
 </section>
 
 <!-- TWO MAIN PATHS -->
+
 <section class="section intro-section">
   <div class="section-kicker">WELCOME TO YOUR JOURNEY</div>
 
   <div class="section-heading">
     <h2>What brings you to <em>HypnoMind?</em></h2>
-    <p>Whether you are looking for personal sessions or want to learn hypnotherapy, we have a path for you.</p>
+    <p>
+      Whether you are looking for personal sessions or want to learn
+      hypnotherapy, we have a path for you.
+    </p>
   </div>
 
   <div class="feature-grid">
+
     <article class="feature-card feature-dark">
       <div class="feature-number">01</div>
       <h3>I Want to Take a Session</h3>
@@ -155,16 +362,21 @@
       </p>
       <a href="#mentalism">Explore Mentalism ↗</a>
     </article>
+
   </div>
 </section>
 
 <!-- THERAPY SESSIONS -->
+
 <section class="section" id="sessions">
   <div class="section-kicker">01 / PERSONAL HYPNOTHERAPY</div>
 
   <div class="split">
     <div>
-      <h2>Explore yourself.<br><em>Discover new possibilities.</em></h2>
+      <h2>
+        Explore yourself.<br>
+        <em>Discover new possibilities.</em>
+      </h2>
     </div>
 
     <div>
@@ -173,16 +385,19 @@
         designed around individual goals, self-understanding
         and personal growth.
       </p>
+
       <p>
         Sessions are available online and offline.
         Connect with us to discuss your goals and understand
         which approach may be suitable for you.
       </p>
+
       <a class="inline-link" href="#contact">Enquire About a Session →</a>
     </div>
   </div>
 
   <div class="course-grid">
+
     <article class="course-card">
       <span class="course-tag">PERSONAL SESSION</span>
       <h3>Hypnotherapy</h3>
@@ -218,6 +433,7 @@
       </ul>
       <a href="#contact">Enquire Now →</a>
     </article>
+
   </div>
 
   <div class="trust-strip">
@@ -225,10 +441,12 @@
       <strong>Online Sessions</strong>
       <span>Connect remotely</span>
     </div>
+
     <div>
       <strong>Offline Sessions</strong>
       <span>In-person appointments</span>
     </div>
+
     <div>
       <strong>Personal Approach</strong>
       <span>Discuss your individual goals</span>
@@ -237,6 +455,7 @@
 </section>
 
 <!-- PROFESSIONAL TRAINING -->
+
 <section class="section courses-section" id="training">
   <div class="section-kicker">02 / PROFESSIONAL HYPNOTHERAPY TRAINING</div>
 
@@ -249,6 +468,7 @@
   </div>
 
   <div class="feature-grid">
+
     <article class="feature-card feature-dark">
       <div class="feature-number">ONLINE</div>
       <h3>Online Training</h3>
@@ -266,6 +486,7 @@
       <h3>One-to-One & Group</h3>
       <p>Choose individual learning or a group training format.</p>
     </article>
+
   </div>
 
   <div class="section-heading">
@@ -274,6 +495,7 @@
   </div>
 
   <div class="course-grid">
+
     <article class="course-card">
       <span class="course-tag">MODULE 01</span>
       <h3>Foundations</h3>
@@ -338,6 +560,7 @@
       </p>
       <a href="#contact">Ask About Certification →</a>
     </article>
+
   </div>
 
   <div class="section-heading">
@@ -346,7 +569,9 @@
 </section>
 
 <!-- MENTALISM -->
+
 <section class="mentalism-section" id="mentalism">
+
   <div class="mentalism-visual">
     <div class="mentalism-ring ring-a"></div>
     <div class="mentalism-ring ring-b"></div>
@@ -357,25 +582,34 @@
   <div class="mentalism-copy">
     <div class="section-kicker">03 / MENTALISM & MIND READING</div>
     <h2>The art of <em>impossible</em> moments.</h2>
+
     <p class="lead">
       Discover the performance art of observation,
       psychology, suggestion, presentation and audience connection.
     </p>
+
     <p>
       Learn about mentalism as an entertainment and performance art.
       It is not supernatural mind-reading.
     </p>
+
     <a class="button button-outline" href="#contact">Enquire About Mentalism</a>
   </div>
+
 </section>
 
 <!-- ABOUT -->
+
 <section class="about-section" id="about">
   <div class="about-monogram">HM</div>
 
   <div class="about-copy">
     <div class="section-kicker">04 / ABOUT HYPNOMIND</div>
-    <h2>Meet your guide,<br><em>Vishal Mishra.</em></h2>
+
+    <h2>
+      Meet your guide,<br>
+      <em>Vishal Mishra.</em>
+    </h2>
 
     <p class="lead">
       HypnoMind is a learning and personal exploration platform
@@ -395,7 +629,9 @@
 </section>
 
 <!-- CONTACT / ENQUIRY -->
+
 <section class="contact-section" id="contact">
+
   <div class="contact-copy">
     <div class="section-kicker">05 / GET STARTED</div>
     <h2>Let's begin your <em>journey.</em></h2>
@@ -414,6 +650,7 @@
   </div>
 
   <form class="enquiry-form" id="enquiry-form">
+
     <div class="form-heading">
       HypnoMind Enquiry Form
       <span>Tell us what you are looking for.</span>
@@ -488,6 +725,7 @@
     <small class="privacy-note">
       Your details will only be used to respond to your enquiry.
     </small>
+
   </form>
 </section>
 
@@ -503,43 +741,84 @@
 
 </main>
 
+<!-- FAQ SECTION -->
 
-<!-- QUICK FAQ -->
 <section class="section faq-section" id="faq">
+
   <div class="section-kicker">A FEW QUICK ANSWERS</div>
+
   <div class="section-heading">
     <h2>Questions? <em>Start here.</em></h2>
     <p>Helpful information before you book a session or join a training.</p>
   </div>
+
   <div class="faq-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px;max-width:1050px;margin:0 auto">
-    <details class="course-card" style="padding:24px"><summary style="cursor:pointer;font-weight:700">Are sessions available online?</summary><p style="margin-top:14px">Yes. Online sessions are available. Offline appointments can also be discussed based on availability.</p></details>
-    <details class="course-card" style="padding:24px"><summary style="cursor:pointer;font-weight:700">Can beginners join training?</summary><p style="margin-top:14px">Training enquiries are welcome from beginners. Share your learning goals and we can explain the suitable learning path.</p></details>
-    <details class="course-card" style="padding:24px"><summary style="cursor:pointer;font-weight:700">Is a certificate provided?</summary><p style="margin-top:14px">A Certificate of Completion is offered after fulfilling the applicable training and completion requirements.</p></details>
-    <details class="course-card" style="padding:24px"><summary style="cursor:pointer;font-weight:700">How do I know which option is right?</summary><p style="margin-top:14px">Send an enquiry with your goal. HypnoMind can share session or training details so you can make an informed choice.</p></details>
+
+    <details class="course-card" style="padding:24px">
+      <summary style="cursor:pointer;font-weight:700">Are sessions available online?</summary>
+      <p style="margin-top:14px">
+        Yes. Online sessions are available. Offline appointments can also be discussed based on availability.
+      </p>
+    </details>
+
+    <details class="course-card" style="padding:24px">
+      <summary style="cursor:pointer;font-weight:700">Can beginners join training?</summary>
+      <p style="margin-top:14px">
+        Training enquiries are welcome from beginners. Share your learning goals and we can explain the suitable learning path.
+      </p>
+    </details>
+
+    <details class="course-card" style="padding:24px">
+      <summary style="cursor:pointer;font-weight:700">Is a certificate provided?</summary>
+      <p style="margin-top:14px">
+        A Certificate of Completion is offered after fulfilling the applicable training and completion requirements.
+      </p>
+    </details>
+
+    <details class="course-card" style="padding:24px">
+      <summary style="cursor:pointer;font-weight:700">How do I know which option is right?</summary>
+      <p style="margin-top:14px">
+        Send an enquiry with your goal. HypnoMind can share session or training details so you can make an informed choice.
+      </p>
+    </details>
+
   </div>
-  <div class="section-heading" style="margin-top:32px"><a class="button button-gold" href="#contact">Ask Your Question →</a></div>
+
+  <div class="section-heading" style="margin-top:32px">
+    <a class="button button-gold" href="#contact">Ask Your Question →</a>
+  </div>
+
 </section>
 
 <footer class="footer">
+
   <a class="brand footer-brand" href="#home">
     <span class="brand-mark">H</span>
-    <span>HYPNO<span class="brand-accent">MIND</span>
+    <span>
+      HYPNO<span class="brand-accent">MIND</span>
       <small>Heal • Learn • Transform</small>
     </span>
   </a>
 
   <p>© <span id="year"></span> HypnoMind · Vishal Mishra</p>
+
   <a href="admin.html">Admin</a>
+
 </footer>
+
+<!-- WHATSAPP BUTTON -->
 
 <a class="whatsapp-float"
    href="https://wa.me/918887892437?text=Hello%20HypnoMind%2C%20I%20want%20to%20know%20more."
-   target="_blank" rel="noopener"
+   target="_blank"
+   rel="noopener"
    aria-label="Contact HypnoMind on WhatsApp"
    title="Chat with HypnoMind on WhatsApp">
+
   <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true">
     <path d="M12.04 2a9.94 9.94 0 0 0-8.5 15.1L2 22l5.05-1.32A10 10 0 1 0 12.04 2zm0 18.3a8.28 8.28 0 0 1-4.22-1.15l-.3-.18-3 .78.8-2.92-.2-.3a8.3 8.3 0 1 1 6.92 3.77zm4.56-6.22c-.25-.13-1.48-.73-1.71-.81-.23-.08-.13-.13-.13-.38.13-.25.3-.43.63-.66.75-.2.13-.43.1-.66-.03-.25-.13-1.05-.39-2-1.23-.75-.66-1.25-1.48-1.4-1.73-.15-.25-.02-.48.1-.61.12-.12.25-.3.38-.45.13-.15.17-.25.25-.4.08-.15.04-.3-.02-.43-.06-.13-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.05 0 1.2.9 2.35 1.03 2.5.13.15 1.77 2.7 4.3 3.78.6.25 1.07.42 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.48-.6 1.7-1.18.22-.58.22-1.08.16-1.18-.06-.1-.22-.16-.47-.29z"/>
   </svg>
+
 </a>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
