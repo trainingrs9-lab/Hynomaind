@@ -5,7 +5,7 @@
 .hero-art{display:none}
 .feature-card{position:relative;overflow:hidden;min-height:310px;padding-top:175px!important}
 .feature-card:before{content:"";position:absolute;top:0;left:0;right:0;height:160px;background-size:cover;background-position:center;filter:saturate(.88)}
-.feature-dark:before{background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85')}
+.feature-dark:before{background-image:url('https://ik.imagekit.io/sabbierablog/Hypnose%20Vittoria%20Fazio/Blog2/serene-therapy-session-modern-healthcare-setting.png?tr=f-auto%2Cq-auto%2Cw-900')}
 .feature-image:before{background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85')}
 .feature-light:before{background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85')}
 .feature-number{position:relative;z-index:1}
