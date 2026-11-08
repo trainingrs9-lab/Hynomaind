@@ -97,12 +97,6 @@
     }
   }
 
-
-  /* Card 01 animated background test — remove this block to roll back */
-  .feature-video-card{position:relative;overflow:hidden;isolation:isolate}
-  .feature-video-card .feature-card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62;z-index:0;pointer-events:none}
-  .feature-video-card::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(12,24,42,.88),rgba(12,24,42,.38));z-index:1;pointer-events:none}
-  .feature-video-card>*:not(.feature-card-video){position:relative;z-index:2}
 </style>
 </head>
 
@@ -174,8 +168,7 @@
   </div>
 
   <div class="feature-grid">
-    <article class="feature-card feature-dark feature-video-card">
-      <img class="feature-card-video" src="session-animation.gif" alt="" aria-hidden="true" loading="lazy">
+    <article class="feature-card feature-dark">
       <div class="feature-number">01</div>
       <h3>I Want to Take a Session</h3>
       <p>
