@@ -2,9 +2,13 @@ const cfg=window.HYPNOMIND_CONFIG||{};
 const statusNode=document.getElementById('admin-status');
 const dashboardStatus=document.getElementById('dashboard-status');
 let client=null;
+let allEnquiries=[];
 const login=document.getElementById('login-form');
 const dashboard=document.getElementById('dashboard');
 const logout=document.getElementById('logout');
+const searchInput=document.getElementById('enquiry-search');
+const interestFilter=document.getElementById('interest-filter');
+const statusFilter=document.getElementById('status-filter');
 
 if(cfg.supabaseUrl&&!cfg.supabaseUrl.includes('YOUR-PROJECT')&&cfg.supabaseAnonKey&&!cfg.supabaseAnonKey.includes('YOUR_SUPABASE')){
   client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey);
@@ -36,6 +40,9 @@ logout.addEventListener('click',async()=>{
 });
 
 document.getElementById('refresh').addEventListener('click',loadEnquiries);
+searchInput.addEventListener('input',renderEnquiries);
+interestFilter.addEventListener('change',renderEnquiries);
+statusFilter.addEventListener('change',renderEnquiries);
 
 async function loadEnquiries(){
   if(!client)return;
@@ -45,28 +52,53 @@ async function loadEnquiries(){
     dashboardStatus.textContent='Could not load enquiries: '+error.message;
     return;
   }
-  document.getElementById('count').textContent=`${data.length} ${data.length===1?'enquiry':'enquiries'}`;
+  allEnquiries=data||[];
+  document.getElementById('count').textContent=`${allEnquiries.length} ${allEnquiries.length===1?'enquiry':'enquiries'}`;
+  const currentInterest=interestFilter.value;
+  const interests=[...new Set(allEnquiries.map(x=>x.interest).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+  interestFilter.replaceChildren(new Option('All enquiry types',''));
+  interests.forEach(value=>interestFilter.add(new Option(value,value)));
+  if(interests.includes(currentInterest))interestFilter.value=currentInterest;
+  renderEnquiries();
+  if(allEnquiries.length===0)dashboardStatus.textContent='No enquiries found yet.';
+  else dashboardStatus.textContent='';
+}
+
+function renderEnquiries(){
+  const term=searchInput.value.trim().toLowerCase();
+  const chosenInterest=interestFilter.value;
+  const chosenStatus=statusFilter.value;
+  const filtered=allEnquiries.filter(item=>{
+    const searchable=[item.query_code,item.name,item.phone,item.email,item.interest,item.message,item.status].filter(Boolean).join(' ').toLowerCase();
+    return (!term||searchable.includes(term))&&(!chosenInterest||item.interest===chosenInterest)&&(!chosenStatus||item.status===chosenStatus);
+  });
   const body=document.getElementById('enquiry-rows');
   body.replaceChildren();
-  for(const item of data){
+  filtered.forEach(item=>{
     const tr=document.createElement('tr');
-    const date=new Date(item.created_at).toLocaleString();
-    const contact=[item.phone,item.email].filter(Boolean).join(' · ');
-    const cells=[date,`${item.name}\n${contact}`,item.interest,item.message||''];
-    cells.forEach(value=>{
+    const code=document.createElement('td');
+    code.className='query-code';
+    code.textContent=item.query_code||'—';
+    tr.appendChild(code);
+    const date=document.createElement('td');
+    date.textContent=new Date(item.created_at).toLocaleString();
+    tr.appendChild(date);
+    const contact=document.createElement('td');
+    contact.textContent=[item.name,[item.phone,item.email].filter(Boolean).join(' · ')].filter(Boolean).join('\n');
+    contact.style.whiteSpace='pre-line';
+    tr.appendChild(contact);
+    [item.interest||'',item.message||''].forEach(value=>{
       const td=document.createElement('td');
       td.textContent=value;
       td.style.whiteSpace='pre-line';
       tr.appendChild(td);
     });
-    const td=document.createElement('td');
+    const statusCell=document.createElement('td');
     const select=document.createElement('select');
     ['New','Contacted','Completed'].forEach(s=>{
-      const op=document.createElement('option');
-      op.value=s;
-      op.textContent=s;
-      op.selected=item.status===s;
-      select.appendChild(op);
+      const op=new Option(s,s);
+      op.selected=(item.status||'New')===s;
+      select.add(op);
     });
     select.addEventListener('change',async()=>{
       const previousStatus=item.status||'New';
@@ -74,17 +106,13 @@ async function loadEnquiries(){
       select.disabled=true;
       dashboardStatus.textContent='Saving status…';
       try{
-        const {data:updated,error:updateError}=await client
-          .from('enquiries')
-          .update({status:nextStatus})
-          .eq('id',item.id)
-          .select('id,status')
-          .single();
+        const {data:updated,error:updateError}=await client.from('enquiries').update({status:nextStatus}).eq('id',item.id).select('id,status').single();
         if(updateError)throw updateError;
         if(!updated)throw new Error('No enquiry row was updated. Please check the admin database permission.');
         item.status=updated.status;
         select.value=updated.status;
         dashboardStatus.textContent='Status saved successfully.';
+        renderEnquiries();
       }catch(err){
         select.value=previousStatus;
         dashboardStatus.textContent='Status could not be saved: '+(err.message||'Unknown error');
@@ -92,10 +120,9 @@ async function loadEnquiries(){
         select.disabled=false;
       }
     });
-    td.appendChild(select);
-    tr.appendChild(td);
+    statusCell.appendChild(select);
+    tr.appendChild(statusCell);
     body.appendChild(tr);
-  }
-  if(data.length===0)dashboardStatus.textContent='No enquiries found yet.';
-  else if(dashboardStatus.textContent==='Loading enquiries…')dashboardStatus.textContent='';
+  });
+  if(filtered.length===0)dashboardStatus.textContent='No enquiries match your search or filters.';
 }
