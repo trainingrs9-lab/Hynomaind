@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#101b2b">
   <meta name="description" content="HypnoMind offers hypnotherapy sessions and professional hypnotherapy training online and offline. Learn, explore and grow with Vishal Mishra.">
+  <meta name="google-site-verification" content="L5ec01sMNoC1VQicIhBwFo6dwIkUmkOxp_6pTwlzEGY" />
   <title>HypnoMind | Hypnotherapy Sessions & Professional Training</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=16">
+
   <style>
     .whatsapp-float {
       position: fixed; width: 60px; height: 60px; bottom: 25px; right: 25px;
@@ -25,79 +27,97 @@
     @media (max-width: 600px) {
       .whatsapp-float { width: 55px; height: 55px; bottom: 18px; right: 18px; }
     }
-  /* HypnoMind hero photograph */
-  .hero-image-wrap{position:relative;overflow:hidden;border-radius:28px;min-height:320px;box-shadow:0 24px 60px rgba(15,27,45,.18)}
-  .hero-image{display:block;width:100%;height:100%;min-height:320px;object-fit:cover;object-position:center;border-radius:28px}
-  .hero-image-caption{position:absolute;left:18px;bottom:18px;padding:11px 16px;border-radius:999px;background:rgba(16,27,43,.78);color:#fff;font-size:13px;letter-spacing:.04em;backdrop-filter:blur(8px)}
-  @media(max-width:760px){.hero-image-wrap,.hero-image{min-height:240px}.hero-image-caption{font-size:11px;left:12px;bottom:12px}}
-  .about-profile{width:100%;max-width:340px;aspect-ratio:4/5;object-fit:cover;object-position:center 28%;border-radius:24px;box-shadow:0 20px 45px rgba(15,27,45,.16);border:6px solid #fff}
-  .about-section{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:clamp(24px,5vw,60px);align-items:center}
-  @media(max-width:760px){.about-section{grid-template-columns:1fr}.about-profile{max-width:260px;margin:0 auto;display:block}}
 
-  /* Smooth premium entrance and hover interactions */
-  @keyframes hypnoLiftIn {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .site-header { animation: hypnoLiftIn .65s ease both; }
-  .hero-content { animation: hypnoLiftIn .9s .08s ease both; }
-  .hero-image-wrap { animation: hypnoLiftIn 1s .18s ease both; }
-  main > section:not(.hero) { animation: hypnoLiftIn .8s ease both; }
-  .feature-card, .course-card, .enquiry-form, .faq-item {
-    transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
-  }
-  .feature-card:hover, .course-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 18px 38px rgba(16,27,43,.13);
-  }
-  .course-featured:hover { transform: translateY(-13px); }
-  .enquiry-form:hover {
-    box-shadow: 0 22px 55px rgba(16,27,43,.13);
-  }
-  .faq-item:hover {
-    background: rgba(255,255,255,.48);
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .nav a:not(.nav-cta) {
-    position: relative;
-    transition: color .25s ease, transform .25s ease;
-  }
-  .nav a:not(.nav-cta):hover {
-    color: var(--gold);
-    transform: translateY(-2px);
-  }
-  .nav a:not(.nav-cta)::after {
-    content: "";
-    position: absolute;
-    left: 0; right: 100%; bottom: -7px;
-    height: 1px;
-    background: var(--gold);
-    transition: right .25s ease;
-  }
-  .nav a:not(.nav-cta):hover::after { right: 0; }
-  .nav .nav-cta { transition: background .25s ease, color .25s ease, transform .25s ease; }
-  .nav .nav-cta:hover {
-    background: var(--gold);
-    color: var(--navy);
-    transform: translateY(-2px);
-  }
-  .button, .inline-link, .feature-card a, .course-card a, .contact-details a {
-    transition: transform .25s ease, color .25s ease, background-color .25s ease;
-  }
-  .button:hover, .inline-link:hover, .feature-card a:hover, .course-card a:hover {
-    transform: translateY(-2px);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: .01ms !important;
-      animation-iteration-count: 1 !important;
-      scroll-behavior: auto !important;
-      transition-duration: .01ms !important;
+    /* HypnoMind hero photograph */
+    .hero-image-wrap {
+      position:relative; overflow:hidden; border-radius:28px;
+      min-height:320px; box-shadow:0 24px 60px rgba(15,27,45,.18)
     }
-  }
+    .hero-image {
+      display:block; width:100%; height:100%; min-height:320px;
+      object-fit:cover; object-position:center; border-radius:28px
+    }
+    .hero-image-caption {
+      position:absolute; left:18px; bottom:18px; padding:11px 16px;
+      border-radius:999px; background:rgba(16,27,43,.78); color:#fff;
+      font-size:13px; letter-spacing:.04em; backdrop-filter:blur(8px)
+    }
+    @media(max-width:760px) {
+      .hero-image-wrap,.hero-image { min-height:240px }
+      .hero-image-caption { font-size:11px; left:12px; bottom:12px }
+    }
 
-</style>
+    .about-profile {
+      width:100%; max-width:340px; aspect-ratio:4/5;
+      object-fit:cover; object-position:center 28%; border-radius:24px;
+      box-shadow:0 20px 45px rgba(15,27,45,.16);
+      border:6px solid #fff
+    }
+    .about-section {
+      display:grid; grid-template-columns:minmax(220px,340px) 1fr;
+      gap:clamp(24px,5vw,60px); align-items:center
+    }
+    @media(max-width:760px) {
+      .about-section { grid-template-columns:1fr }
+      .about-profile { max-width:260px; margin:0 auto; display:block }
+    }
+
+    /* Smooth premium entrance and hover interactions */
+    @keyframes hypnoLiftIn {
+      from { opacity:0; transform:translateY(18px) }
+      to { opacity:1; transform:translateY(0) }
+    }
+    .site-header { animation:hypnoLiftIn .65s ease both }
+    .hero-content { animation:hypnoLiftIn .9s .08s ease both }
+    .hero-image-wrap { animation:hypnoLiftIn 1s .18s ease both }
+    main > section:not(.hero) { animation:hypnoLiftIn .8s ease both }
+
+    .feature-card,.course-card,.enquiry-form,.faq-item {
+      transition:transform .28s ease,box-shadow .28s ease,
+      border-color .28s ease,background-color .28s ease
+    }
+    .feature-card:hover,.course-card:hover {
+      transform:translateY(-7px);
+      box-shadow:0 18px 38px rgba(16,27,43,.13)
+    }
+    .course-featured:hover { transform:translateY(-13px) }
+    .enquiry-form:hover { box-shadow:0 22px 55px rgba(16,27,43,.13) }
+    .faq-item:hover {
+      background:rgba(255,255,255,.48);
+      padding-left:10px; padding-right:10px
+    }
+    .nav a:not(.nav-cta) {
+      position:relative; transition:color .25s ease,transform .25s ease
+    }
+    .nav a:not(.nav-cta):hover {
+      color:var(--gold); transform:translateY(-2px)
+    }
+    .nav a:not(.nav-cta)::after {
+      content:""; position:absolute; left:0; right:100%; bottom:-7px;
+      height:1px; background:var(--gold); transition:right .25s ease
+    }
+    .nav a:not(.nav-cta):hover::after { right:0 }
+    .nav .nav-cta {
+      transition:background .25s ease,color .25s ease,transform .25s ease
+    }
+    .nav .nav-cta:hover {
+      background:var(--gold); color:var(--navy); transform:translateY(-2px)
+    }
+    .button,.inline-link,.feature-card a,.course-card a,.contact-details a {
+      transition:transform .25s ease,color .25s ease,background-color .25s ease
+    }
+    .button:hover,.inline-link:hover,.feature-card a:hover,.course-card a:hover {
+      transform:translateY(-2px)
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after {
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -413,7 +433,9 @@
 
 <!-- ABOUT -->
 <section class="about-section" id="about">
-  <div class="about-photo-wrap"><img class="about-profile" src="vishal-mishra.png" alt="Vishal Mishra, HypnoMind hypnotherapy trainer"></div>
+  <div class="about-photo-wrap">
+    <img class="about-profile" src="vishal-mishra.png" alt="Vishal Mishra, HypnoMind hypnotherapy trainer">
+  </div>
 
   <div class="about-copy">
     <div class="section-kicker">04 / ABOUT HYPNOMIND</div>
@@ -548,31 +570,38 @@
         <summary>What is hypnotherapy?</summary>
         <p>Hypnotherapy uses guided relaxation and focused attention to support personal exploration and positive change. Each person's experience is different, and results are not guaranteed.</p>
       </details>
+
       <details class="faq-item">
         <summary>Do you offer online and offline sessions?</summary>
         <p>Yes. HypnoMind offers online and offline options, subject to availability and suitability. Share your preference in the enquiry form and we can discuss the details.</p>
       </details>
+
       <details class="faq-item">
         <summary>What kind of sessions can I enquire about?</summary>
         <p>You can enquire about personal hypnotherapy, Past Life Regression as an exploratory practice, Inner Child Work and NLP-based personal-development sessions.</p>
       </details>
+
       <details class="faq-item">
         <summary>Can beginners learn hypnotherapy at HypnoMind?</summary>
         <p>Yes. Training enquiries are welcome from beginners as well as learners looking to develop their existing skills. The learning path can be discussed according to your goals.</p>
       </details>
+
       <details class="faq-item">
         <summary>Is training available one-to-one or in a group?</summary>
         <p>Both one-to-one and group training formats may be available. Online and offline learning options can also be discussed when you enquire.</p>
       </details>
+
       <details class="faq-item">
         <summary>Will I receive a certificate after training?</summary>
         <p>A certificate is available on completion of the applicable training programme. Please confirm the programme requirements and completion criteria before enrolling.</p>
       </details>
+
       <details class="faq-item">
         <summary>How do I book a session or ask about training?</summary>
         <p>Use the Enquire Now form on this page, choose the service or training you are interested in, and share your preferred mode. The HypnoMind team can then get in touch with you.</p>
       </details>
     </div>
+
     <p class="faq-note">Please note: Hypnotherapy and personal-development sessions are not a substitute for medical diagnosis or treatment.</p>
   </div>
 </section>
@@ -607,7 +636,7 @@
    aria-label="Contact HypnoMind on WhatsApp"
    title="Chat with HypnoMind on WhatsApp">
   <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true">
-    <path d="M12.04 2a9.94 9.94 0 0 0-8.5 15.1L2 22l5.05-1.32A10 10 0 1 0 12.04 2zm0 18.3a8.28 8.28 0 0 1-4.22-1.15l-.3-.18-3 .78.8-2.92-.2-.3a8.3 8.3 0 1 1 6.92 3.77zm4.56-6.22c-.25-.13-1.48-.73-1.71-.81-.23-.08-.13-.13-.13-.38.13-.25.3-.43.63-.66.75-.2.13-.43.1-.66-.03-.25-.13-1.05-.39-2-1.23-.75-.66-1.25-1.48-1.4-1.73-.15-.25-.02-.48.1-.61.12-.12.25-.3.38-.45.13-.15.17-.25.25-.4.08-.15.04-.3-.02-.43-.06-.13-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.05 0 1.2.9 2.35 1.03 2.5.13.15 1.77 2.7 4.3 3.78.6.25 1.07.42 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.48-.6 1.7-1.18.22-.58.22-1.08.16-1.18-.06-.1-.22-.16-.47-.29z"/>
+    <path d="M12.04 2a9.94 9.94 0 0 0-8.5 15.1L2 22l5.05-1.32A10 10 0 1 0 12.04 2zm0 18.3a8.28 8.28 0 0 1-4.22-1.15l-.3-.18-3 .78.8-2.92-.2-.3a8.3 8.3 0 1 1 6.92 3.77zm4.56-6.22c-.25-.13-1.48-.73-1.71-.81-.23-.08-.13-.13-.13-.38.13-.25.3-.43.63-.66.75-.2.13-.43.1-.66-.03-.25-.13-1.05-.39-2-1.23-.75-.66-1.25-1.48-1.4-1.73-.15-.25-.02-.48.1-.61.12-.12.25-.3.38-.45.13-.15.17-.25.25-.4.08-.15.04-.3-.02-.43-.06-.13-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.05 0 1.2.9 2.35 1.03 2.5.13.15 1.77 2.7 4.3 3.78.6.25 1.07.42 1.58.1.48-.07 1.48-.6 1.7-1.18.22-.58.22-1.08.16-1.18-.06-.1-.22-.16-.47-.29z"/>
   </svg>
 </a>
 
