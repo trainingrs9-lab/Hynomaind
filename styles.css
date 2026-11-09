@@ -48,3 +48,8 @@
 .card-one-to-one:before {
   background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85');
 }
+
+/* Restore the original photo on the I Want to Learn Hypnotherapy card */
+.card-learn-hypnotherapy:before {
+  background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85');
+}
