@@ -53,3 +53,8 @@
 .card-learn-hypnotherapy:before {
   background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85');
 }
+
+/* Dedicated photo for the Offline Training card */
+.card-offline-training:before {
+  background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=85');
+}
